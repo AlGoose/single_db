@@ -4,7 +4,8 @@
       <v-card>
         <v-card-title>Текущие свойства</v-card-title>
         <v-divider></v-divider>
-        <v-card-text>Свойства...</v-card-text>
+        <v-card-text v-if="node">{{node.id}}</v-card-text>
+        <v-card-text v-else>Свойства...</v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -80,7 +81,8 @@
       <v-card>
         <v-card-title>Родительские свойства</v-card-title>
         <v-divider></v-divider>
-        <v-card-text>Свойства...</v-card-text>
+        <v-card-text v-if="node">{{node}}</v-card-text>
+        <v-card-text v-else>Свойства...</v-card-text>
       </v-card>
     </v-col>
   </v-row>
@@ -96,6 +98,13 @@ export default {
     enumItemsArray: [],
     types: ["String", "Number", "File", "Enum", "Range"]
   }),
+
+  computed: {
+    node() {
+      return this.$store.state.node;
+    }
+  },
+
   methods: {
     addEnumItem() {
       if (this.enumItemName != null && this.enumItemName != "") {

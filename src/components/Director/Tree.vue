@@ -7,9 +7,10 @@
         hoverable
         activatable
         :items="items"
-        :active.sync="active"
         :open.sync="open"
+        @update:active="selectNode"
         expand-icon="fas fa-chevron-down"
+        return-object
       ></v-treeview>
     </v-card>
   </v-container>
@@ -18,7 +19,6 @@
 <script>
 export default {
   data: () => ({
-    active: [],
     open: [],
     items: [
       {
@@ -92,6 +92,13 @@ export default {
         ]
       }
     ]
-  })
+  }),
+
+  methods: {
+    selectNode(node) {
+      this.$store.commit('setNode', node.pop());
+      // this.$store.commit('setNodeID', node.pop());
+    }
+  }
 };
 </script>

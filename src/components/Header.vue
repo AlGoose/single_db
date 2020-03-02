@@ -7,6 +7,7 @@
       <v-btn to="/about" text color="white">About</v-btn>
       <v-btn to="/manager" text color="white">Manager</v-btn>
       <v-btn to="/director" text color="white">Director</v-btn>
+      <v-btn to="/login" text color="white">Login</v-btn>
     </v-toolbar-items>
     <v-spacer></v-spacer>
     <v-btn icon color="white">
