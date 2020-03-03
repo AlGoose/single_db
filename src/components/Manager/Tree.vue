@@ -11,9 +11,12 @@
         :open.sync="open"
         expand-icon="fas fa-chevron-down"
       >
-        <template slot="append" slot-scope="{ item }" v-if="item.children">
+        <template slot="append" slot-scope="{ item }">
+          <v-btn icon v-if="item.children">
+            <v-icon @click="openAddDialog(item)">far fa-plus-square</v-icon>
+          </v-btn>
           <v-btn icon>
-            <v-icon @click="openDialog(item)">far fa-plus-square</v-icon>
+            <v-icon @click="removeDialog = true">far fa-minus-square</v-icon>
           </v-btn>
         </template>
       </v-treeview>
@@ -21,7 +24,7 @@
     </v-card>
 
     <v-row justify="center">
-      <v-dialog v-model="dialog" persistent max-width="600px">
+      <v-dialog v-model="addDialog" persistent max-width="600px">
         <v-card>
           <v-card-title>
             <span class="headline">Добавить узел</span>
@@ -38,8 +41,23 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn outlined color="red" @click="closeDialog">Отмена</v-btn>
+            <v-btn outlined color="red" @click="closeAddDialog">Отмена</v-btn>
             <v-btn outlined color="success" @click="addNode">Добавить</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </v-row>
+
+    <v-row justify="center">
+      <v-dialog v-model="removeDialog" persistent max-width="300px">
+        <v-card>
+          <v-card-title>
+            <span class="headline">Точно удалить?</span>
+          </v-card-title>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn outlined color="success" @click="removeDialog = false">Отмена</v-btn>
+            <v-btn outlined color="red" @click="removeNode">Удалить</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -50,7 +68,8 @@
 <script>
 export default {
   data: () => ({
-    dialog: false,
+    addDialog: false,
+    removeDialog: false,
     isNodeParent: false,
     nodeName: null,
     currentNode: null,
@@ -131,16 +150,16 @@ export default {
   }),
 
   methods: {
-    openDialog(item) {
+    openAddDialog(item) {
       this.currentNode = item;
-      this.dialog = true;
+      this.addDialog = true;
     },
 
-    closeDialog() {
+    closeAddDialog() {
       this.currentNode = null;
       this.nodeName = null;
       this.isNodeParent = false;
-      this.dialog = false;
+      this.addDialog = false;
     },
 
     addNode() {
@@ -152,9 +171,22 @@ export default {
       if (this.isNodeParent) {
         obj.children = [];
       }
-      
+
       this.currentNode.children.push(obj);
-      this.closeDialog();
+      this.closeAddDialog();
+    },
+
+    removeNode() {
+      let selectedID = this.active.pop();
+      this.items.map(function callback(currentNode, index, array) {
+        if (currentNode.id === selectedID) {
+          array.splice(index, 1);
+          return;
+        } else if (currentNode.children) {
+          currentNode.children.map(callback);
+        }
+      });
+      this.removeDialog = false;
     }
   }
 };

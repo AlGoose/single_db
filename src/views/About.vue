@@ -6,6 +6,9 @@
       <v-btn color="success" @click="decrement">-</v-btn>
       <span>{{count}}</span>
     </v-row>
+    <v-row>
+      <v-btn color="indigo" dark @click="logout">LOGOUT</v-btn>
+    </v-row>
     <v-row justify="center">
       <v-card width="500">
         <v-card-title>Cвойства</v-card-title>
@@ -62,6 +65,12 @@ export default {
     },
     decrement() {
       this.$store.commit("decrement");
+    },
+
+    logout() {
+      this.$store.dispatch("AUTH_LOGOUT").then(() => {
+        this.$router.push("/login");
+      });
     }
   }
 };
