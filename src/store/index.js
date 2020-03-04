@@ -5,7 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 0,
     node: null,
     token: localStorage.getItem('user-token') || '',
     status: ''
@@ -21,12 +20,6 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    increment(state) {
-      state.count++;
-    },
-    decrement(state) {
-      state.count--;
-    },
     setNode(state, newNode) {
       state.node = newNode;
     },

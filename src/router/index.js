@@ -7,18 +7,18 @@ Vue.use(VueRouter)
 
 const ifNotAuthenticated = (to, from, next) => {
   if (!store.getters.isAuthenticated) {
-    next()
-    return
+    next();
+    return;
   }
-  next('/')
+  next('/');
 }
 
 const ifAuthenticated = (to, from, next) => {
   if (store.getters.isAuthenticated) {
-    next()
-    return
+    next();
+    return;
   }
-  next('/login')
+  next('/login');
 }
 
 const routes = [
@@ -53,6 +53,12 @@ const routes = [
     name: 'Login',
     component: () => import('../views/Login.vue'),
     beforeEnter: ifNotAuthenticated
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: () => import('../views/Search.vue'),
+    beforeEnter: ifAuthenticated
   }
 ]
 

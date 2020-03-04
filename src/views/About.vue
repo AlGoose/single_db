@@ -1,14 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <v-row>
-      <v-btn color="success" @click="increment">+</v-btn>
-      <v-btn color="success" @click="decrement">-</v-btn>
-      <span>{{count}}</span>
-    </v-row>
-    <v-row>
-      <v-btn color="indigo" dark @click="logout">LOGOUT</v-btn>
-    </v-row>
+  <v-container fluid>
+    <h1 align="center">This is an about page</h1>
     <v-row justify="center">
       <v-card width="500">
         <v-card-title>Cвойства</v-card-title>
@@ -39,7 +31,7 @@
         </v-card-text>
       </v-card>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -49,29 +41,8 @@ export default {
     item: null
   }),
 
-  computed: {
-    count() {
-      return this.$store.state.count;
-    }
-  },
-
   mounted() {
     this.item = Item;
-  },
-
-  methods: {
-    increment() {
-      this.$store.commit("increment");
-    },
-    decrement() {
-      this.$store.commit("decrement");
-    },
-
-    logout() {
-      this.$store.dispatch("AUTH_LOGOUT").then(() => {
-        this.$router.push("/login");
-      });
-    }
   }
 };
 </script>

@@ -17,7 +17,6 @@ export default {
   components: {
     Tree,
     Table
-  },
-  data: () => ({})
+  }
 };
 </script>

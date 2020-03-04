@@ -42,8 +42,6 @@ export default {
 
   methods: {
     signIn() {
-      console.log(this.validate());
-      // console.log(this.$store.getters.authStatus);
       if (this.validate()) {
         const { login, password } = this;
         this.$store.dispatch("AUTH_REQUEST", { login, password }).then(() => {
