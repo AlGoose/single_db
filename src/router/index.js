@@ -59,6 +59,12 @@ const routes = [
     name: 'Search',
     component: () => import('../views/Search.vue'),
     beforeEnter: ifAuthenticated
+  },
+  {
+    path: '/catalog',
+    name: 'Catalog',
+    component: () => import('../views/Catalog.vue'),
+    beforeEnter: ifAuthenticated
   }
 ]
 

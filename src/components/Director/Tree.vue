@@ -94,10 +94,13 @@ export default {
     ]
   }),
 
+  destroyed() {
+    this.$store.commit("setNode", null);
+  },
+  
   methods: {
     selectNode(node) {
-      this.$store.commit('setNode', node.pop());
-      // this.$store.commit('setNodeID', node.pop());
+      this.$store.commit("setNode", node.pop());
     }
   }
 };

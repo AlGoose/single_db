@@ -1,0 +1,152 @@
+{
+    "headers": [
+        {
+            "text": "Артикул",
+            "value": "article"
+        },
+        {
+            "text": "Тип изделия",
+            "value": "type"
+        },
+        {
+            "text": "Номинальное сечение",
+            "value": "nominalCut"
+        },
+        {
+            "text": "Размер d1",
+            "value": "size"
+        },
+        {
+            "text": "Диаметр контактного стержня",
+            "value": "diameter"
+        },
+        {
+            "text": "Сечение кабеля 2, 3 класса гибкости мм2",
+            "value": "TwoThreeClassCut"
+        },
+        {
+            "text": "Сечение кабеля 5, 6 класса гибкости мм2",
+            "value": "FiveSizClassCut"
+        },
+        {
+            "text": "Остаток",
+            "value": "count"
+        },
+        {
+            "text": "Цена",
+            "value": "price"
+        }
+    ],
+    "items": [
+        {
+            "article": "zeta10711",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "3",
+            "diameter": "М5",
+            "TwoThreeClassCut": "4",
+            "FiveSizClassCut": "4",
+            "count": "1234 шт.",
+            "price": "1.34 руб."
+        },
+        {
+            "article": "zeta10712",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "4",
+            "diameter": "М6",
+            "TwoThreeClassCut": "6",
+            "FiveSizClassCut": "6",
+            "count": "123 шт.",
+            "price": "2.34 руб."
+        },
+        {
+            "article": "zeta10713",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "5",
+            "diameter": "М8",
+            "TwoThreeClassCut": "6",
+            "FiveSizClassCut": "6",
+            "count": "124 шт.",
+            "price": "32.34 руб."
+        },
+        {
+            "article": "zeta10714",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "6",
+            "diameter": "М6",
+            "TwoThreeClassCut": "10",
+            "FiveSizClassCut": "10",
+            "count": "134 шт.",
+            "price": "22.34 руб."
+        },
+        {
+            "article": "zeta10715",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "7",
+            "diameter": "М5",
+            "TwoThreeClassCut": "16",
+            "FiveSizClassCut": "16",
+            "count": "234 шт.",
+            "price": "62.34 руб."
+        },
+        {
+            "article": "zeta10716",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "8",
+            "diameter": "М10",
+            "TwoThreeClassCut": "25",
+            "FiveSizClassCut": "25",
+            "count": "175 шт.",
+            "price": "82.34 руб."
+        },
+        {
+            "article": "zeta10717",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "9",
+            "diameter": "М10",
+            "TwoThreeClassCut": "25",
+            "FiveSizClassCut": "25",
+            "count": "3234 шт.",
+            "price": "77.77 руб."
+        },
+        {
+            "article": "zeta10718",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "10",
+            "diameter": "М12",
+            "TwoThreeClassCut": "35",
+            "FiveSizClassCut": "35",
+            "count": "6034 шт.",
+            "price": "66.34 руб."
+        },
+        {
+            "article": "zeta10719",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "12",
+            "diameter": "М12",
+            "TwoThreeClassCut": "70",
+            "FiveSizClassCut": "50",
+            "count": "34 шт.",
+            "price": "82.34 руб."
+        },
+        {
+            "article": "zeta10720",
+            "type": "Т 4-5-3",
+            "nominalCut": "4 мм",
+            "size": "13",
+            "diameter": "М16",
+            "TwoThreeClassCut": "95",
+            "FiveSizClassCut": "70",
+            "count": "8934 шт.",
+            "price": "132.34 руб."
+        }
+    ]
+}

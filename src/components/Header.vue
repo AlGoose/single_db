@@ -6,15 +6,14 @@
       <template v-if="$store.getters.isAuthenticated">
         <v-btn to="/" text color="white">Home</v-btn>
         <v-btn to="/about" text color="white">About</v-btn>
+        <v-btn to="/catalog" text color="white">Catalog</v-btn>
         <v-btn to="/manager" text color="white">Manager</v-btn>
         <v-btn to="/director" text color="white">Director</v-btn>
+        <v-btn to="/search" text color="white">Search</v-btn>
       </template>
     </v-toolbar-items>
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn to="/search" icon color="white" v-if="$store.getters.isAuthenticated">
-        <v-icon>fas fa-search</v-icon>
-      </v-btn>
       <v-btn to="/login" text color="white" v-if="!$store.getters.isAuthenticated">Login</v-btn>
       <v-btn text color="white" v-else @click="logout">Logout</v-btn>
     </v-toolbar-items>
